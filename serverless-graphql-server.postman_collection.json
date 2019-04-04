@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "1232b90f-b18b-4fa8-9c7f-d30e9aa00443",
+		"name": "serverless-graphql-server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get - hello",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": \"query{ hello { message } }\"\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{HTTP_PORT}}/graph",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{HTTP_PORT}}",
+					"path": [
+						"graph"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post - hi",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": \"mutation{ hi(name: \\\"maria\\\" ) { message } }\"\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{HTTP_PORT}}/graph",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{HTTP_PORT}}",
+					"path": [
+						"graph"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

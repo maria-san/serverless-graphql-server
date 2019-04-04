@@ -1,0 +1,14 @@
+service: serverless-graphql-server
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  versionFunctions: false
+  region: ${file(./serverless.env.yml):${opt:stage}.REGION}
+  environment: ${file(./serverless.env.yml):${opt:stage}}
+
+plugins:
+  - serverless-offline
+    
+functions: ${file(./serverless.functions.js)}
+

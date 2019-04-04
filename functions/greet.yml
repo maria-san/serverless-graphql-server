@@ -1,0 +1,7 @@
+graph:
+  handler: src/handlers/graph.process
+  events:
+    - http:
+        path: graph
+        method: post
+        cors: true
